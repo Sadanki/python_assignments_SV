@@ -2,45 +2,59 @@ import re
 
 def check_password_strength(password):
     """
-    Checks the strength of a given password based on the following criteria:
-    - Minimum length of 8 characters.
-    - Contains both uppercase and lowercase letters.
-    - Contains at least one digit (0-9).
-    - Contains at least one special character (e.g., !, @, #, $, %).
-    Returns True if the password meets all criteria, otherwise False.
+    Validates password strength based on security requirements
+    
+    Args:
+        password: String to be checked
+        
+    Returns:
+        bool: True if password meets all criteria, False otherwise
     """
+    # First check length as it's the quickest operation
     if len(password) < 8:
         return False
-
-    # Define the regular expression patterns for each criterion
-    patterns = {
-        'lowercase letter': "[a-z]",
-        'uppercase letter': "[A-Z]",
-        'digit': "[0-9]",
-        'special character': "[!@#$%^&*(),.?\":{}|<>]"
-    }
-
-    # Check each pattern to ensure the password meets the criteria
-    for criterion, pattern in patterns.items():
-        if not re.search(pattern, password):
-            return False
+        
+    # Check for required character types
+    has_lower = False
+    has_upper = False
+    has_digit = False
+    has_special = False
     
-    return True
+    # Single pass through password to check all criteria
+    special_chars = "!@#$%^&*(),.?\":{}|<>"
+    
+    for char in password:
+        if char.islower():
+            has_lower = True
+        elif char.isupper():
+            has_upper = True
+        elif char.isdigit():
+            has_digit = True
+        elif char in special_chars:
+            has_special = True
+            
+    # Return True only if all criteria are met
+    return all([has_lower, has_upper, has_digit, has_special])
 
 def main():
+    # Main program loop
     while True:
-        user_password = input("Enter your password: ")
-
-        if check_password_strength(user_password):
-            print("Your password is strong.")
+        # Get password input from user
+        password = input("Enter a password to check: ")
+        
+        # Check password strength
+        if check_password_strength(password):
+            print("Password meets security requirements!")
             break
         else:
-            print("Your password is weak. Please ensure it meets the following criteria:")
-            print("- At least 8 characters long")
-            print("- Contains both uppercase and lowercase letters")
-            print("- Contains at least one digit (0-9)")
-            print("- Contains at least one special character (e.g., !, @, #, $, %)")
-    
-# Entry point for the script
+            # Provide feedback for weak password
+            print("\nPassword must contain:")
+            print("- Minimum 8 characters")
+            print("- At least one uppercase letter")
+            print("- At least one lowercase letter")
+            print("- At least one number")
+            print("- At least one special character (!@#$%^&*(),.?\":{}|<>)")
+            print()
+
 if __name__ == "__main__":
     main()
