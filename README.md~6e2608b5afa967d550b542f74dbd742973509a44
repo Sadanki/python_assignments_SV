@@ -1,55 +1,141 @@
-# Python Assignments
-
-This repository contains various Python assignments focused on DevOps, security, and infrastructure management.
-
-## Projects
-
-### 1. Password Strength Checker
-- **Objective**: Ensure strong passwords to enhance security.
-- **Tasks**:
-  - Implement a Python function `check_password_strength` that takes a password string as input.
-  - Check the password against the following criteria:
-    - Minimum length: At least 8 characters.
-    - Contains both uppercase and lowercase letters.
-    - Contains at least one digit (0-9).
-    - Contains at least one special character (e.g., !, @, #, $, %).
-  - Return a boolean value indicating whether the password meets the criteria.
-  - Write a script that takes user input for a password and calls the `check_password_strength` function to validate it.
-  - Provide appropriate feedback to the user based on the strength of the password.
-
-### 2. CPU Health Monitor
-- **Objective**: Monitor the health and performance of servers by tracking CPU usage.
-- **Tasks**:
-  - Continuously monitor the CPU usage of the local machine.
-  - Display an alert message if the CPU usage exceeds a predefined threshold (e.g., 80%).
-  - Run indefinitely until interrupted.
-  - Include appropriate error handling to manage exceptions that may arise during the monitoring process.
-- **Hint**:
-  - Use the `psutil` library in Python to retrieve system information, including CPU usage (`pip install psutil`).
-  - Use the `psutil.cpu_percent()` method to get the current CPU usage as a percentage.
-- **Expected Output**:
-
-Monitoring CPU usage... Alert! CPU usage exceeds threshold: 85% Alert! CPU usage exceeds threshold: 90% ... (continues until interrupted)
 
 
+* ✨ Badges for visibility
+* 📸 Screenshots section (placeholder)
+* 📚 Learning outcomes
+* 🧠 Concepts used
+* 🔗 Useful links
+* ✅ Todo section (for roadmap if you continue development)
 
-### 3. Configuration File Parser
-- **Objective**: Automate configuration management tasks for maintaining consistency and managing infrastructure efficiently.
-- **Tasks**:
-- Read a configuration file (sample provided).
-- Extract specific key-value pairs from the configuration file.
-- Store the extracted information in a data structure (e.g., dictionary or list).
-- Handle errors gracefully in case the configuration file is not found or cannot be read.
-- Save the output file data as JSON in the database.
-- Create a GET request to fetch this information.
-- **Sample Configuration File**:
-```ini
-[Database]
-host = localhost
-port = 3306
-username = admin
-password = secret
+---
 
-[Server]
-address = 192.168.0.1
-port = 8080
+# 🐍 Python Assignments – SV
+
+![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![License](https://img.shields.io/github/license/Sadanki/python_assignments_SV)
+
+## 📘 Project Description
+
+This repository contains a series of Python-based assignments focusing on practical scripting skills useful for system administration, DevOps automation, and security checks. Each assignment is structured to help you build confidence with real-world coding scenarios.
+
+---
+
+## 📁 Folder Structure
+
+```
+python_assignments_SV/
+├── Q1_password_strength.py
+├── Q2_cpu_monitor.py
+├── Q3_config_parser.py
+├── Q4_backup_script.py
+├── requirements.txt
+├── README.md
+└── config/
+    └── sample_config.ini
+```
+
+---
+
+## 💻 Screenshots
+
+> Screenshots or terminal outputs can be added here later to visualize how the scripts work.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Python 3.6 or above
+* `psutil` for CPU monitoring (Install via `pip install psutil`)
+
+### Installation
+
+```bash
+git clone https://github.com/Sadanki/python_assignments_SV.git
+cd python_assignments_SV
+pip install -r requirements.txt
+```
+
+---
+
+## 📜 Script Overviews
+
+### 🔐 Q1: Password Strength Checker
+
+* Checks for:
+
+  * Length (≥ 8)
+  * Uppercase and lowercase letters
+  * Digits and special characters
+
+### 📊 Q2: CPU Load Monitor
+
+* Monitors CPU usage for specific PIDs
+* Logs data to `cpu_load_pid.txt`
+
+### ⚙️ Q3: Config File Parser
+
+* Reads `.ini` configuration files
+* Validates keys and values
+
+### 💾 Q4: Backup Script
+
+* Archives specified files/folders
+* Uses timestamps in filenames
+
+---
+
+## 🧠 Concepts Used
+
+* File handling
+* Regular expressions
+* Logging and time management
+* CPU resource monitoring (`psutil`)
+* Configuration parsing (`configparser`)
+
+---
+
+## 📚 Learning Outcomes
+
+By working through these scripts, you'll:
+
+✅ Improve your understanding of Python fundamentals
+✅ Learn to automate OS-level tasks
+✅ Gain insight into system resource tracking
+✅ Practice secure coding standards
+
+---
+
+## ✅ Todo
+
+* [ ] Add GUI for password checker (Tkinter or Streamlit)
+* [ ] Dockerize CPU monitor script
+* [ ] Add unit tests for each script
+* [ ] Convert config parser into a module
+
+---
+
+## 🔗 Useful Links
+
+* [Python Official Documentation](https://docs.python.org/3/)
+* [psutil Documentation](https://psutil.readthedocs.io/en/latest/)
+* [Python `configparser`](https://docs.python.org/3/library/configparser.html)
+
+---
+
+## 👨‍💻 Author
+
+**Sadanki Vignesh**
+🔗 [GitHub](https://github.com/Sadanki)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+---
+
+
